@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Galaxy Blaster X</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Galaxy Blaster X</h1>
+    <div class="muted">fast arcade shooter — make combos, survive waves</div>
+  </header>
+
+  <div id="gameCard">
+    <canvas id="game" width="900" height="500"></canvas>
+
+    <div id="hud">
+      <div id="scoreBox">Score: 0 • High: 0</div>
+      <div id="hpBar" title="Player HP">
+        <div id="hpFill"></div>
+      </div>
+      <div id="controls">
+        <button class="btn small" id="btnMute">🔊</button>
+        <button class="btn small" id="btnStart">Start</button>
+      </div>
+    </div>
+
+    <div id="touchControls">
+      <div class="touchBtn" id="tLeft">◀</div>
+      <div class="touchBtn" id="tUp">▲</div>
+      <div class="touchBtn" id="tDown">▼</div>
+      <div class="touchBtn" id="tRight">▶</div>
+      <div class="touchBtn" id="tShoot">FIRE</div>
+    </div>
+
+    <div class="credits">Made with <span style="color:var(--accent)">HTML</span> — BY Jenura ✦</div>
+  </div>
+
+  <footer>WASD to move • Space or click to shoot • R to restart • Mobile controls supported</footer>
+</div>
+
+<div id="overlayStart" class="overlay" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;">
+  <div class="panel">
+    <div class="menuTitle">GALAXY BLASTER X</div>
+    <div class="muted">Defend your ship. Survive waves. Get the high score.</div>
+
+    <div style="margin-top:12px">
+      <strong>How to play</strong>
+      <ul class="muted">
+        <li>Move with WASD or arrows (on mobile use buttons)</li>
+        <li>Shoot with Space or click / tap FIRE</li>
+        <li>Enemies spawn faster over time — survive as long as you can!</li>
+      </ul>
+    </div>
+
+    <div class="flex-row">
+      <button class="btn" id="startBtn">▶ Start Game</button>
+      <button class="btn small" id="howBtn">Controls</button>
+      <div style="flex:1"></div>
+      <div class="muted">Best: <span id="bestTxt">0</span></div>
+    </div>
+
+    <div style="margin-top:10px" class="muted">Tip: keep moving — don’t camp near edges.</div>
+  </div>
+</div>
+
+<div id="overlayGameOver" style="display:none;position:fixed;inset:0;align-items:center;justify-content:center;">
+  <div class="panel" id="gameOverPanel" style="text-align:center">
+    <div class="menuTitle">GAME OVER</div>
+    <div class="muted" id="finalScore">Score: 0</div>
+    <div style="margin-top:10px">
+      <button class="btn" id="restartBtn">Restart (R)</button>
+      <button class="btn small" id="menuBtn">Main Menu</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
