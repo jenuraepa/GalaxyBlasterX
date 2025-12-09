@@ -114,7 +114,7 @@ window.addEventListener('keydown', (e)=>{
 
 // Logic
 let spawnTimer = 0;
-let spawnInterval = 1300;
+let spawnInterval = 1250;
 let lastTime = performance.now();
 
 function startGame(){
